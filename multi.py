@@ -39,9 +39,6 @@ class Regression:
             p1 = Process(target=self.calc_gradient, args=[301, 600])
             p2 = Process(target=self.calc_gradient, args=[601, 887])
 
-
-            processes = []
-
             p0.start()
             p1.start()
             p2.start()
@@ -112,6 +109,7 @@ class Regression:
         print(f'GRADIENT: {self.gradient_sum}')
 
 
-r = Regression('titanic_data.csv', 0.000001)
-r.main_driver()
+if __name__ == '__main__':
+    r = Regression('titanic_data.csv', 0.000001)
+    r.main_driver()
 
